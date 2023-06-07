@@ -9,7 +9,7 @@ namespace grpcClientApp
     {
         static async Task Main(string[] args)
         {
-            var input = new HelloRequest { StudentDetails = "Stuart Mukasa Student at NCI HDIP", Age="90" };
+            var input = new HelloRequest { Details = "Stuart Mukasa", Age="90" };
             var channel = GrpcChannel.ForAddress("http://localhost:5187");
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(input);
